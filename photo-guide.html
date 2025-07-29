@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroLos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>* {
+            font-family: "Philosopher", serif;
+        }
+        .sans {
+            font-family: "Open Sans", serif !important;
+        }
+    </style>
+</head>
+<body class="bg-[#1e3b48] w-full min-h-screen flex flex-col items-center">
+    <nav class="w-full max-w-[500px] px-5 box-border mt-2 flex flex-col items-center">
+        <div class="w-full flex justify-between items-center">
+            <button class="bg-transparent border-none p-0 cursor-pointer">
+                <a href="colors.html" class="text-[#f2e6c4] hover:text-[#94855b]">
+                    <svg width="21" height="13" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6">
+                        <path d="M19.945 5.452H3.61l3.7-3.66A1.044 1.044 0 0 0 7.313.308 1.06 1.06 0 0 0 5.82.305L.311 5.757a1.045 1.045 0 0 0-.002 1.485l5.512 5.453a1.06 1.06 0 0 0 1.492-.004c.41-.41.409-1.074-.004-1.482l-3.7-3.66h16.336c.583 0 1.055-.47 1.055-1.049s-.472-1.048-1.055-1.048z"></path>
+                    </svg>
+                </a>
+            </button>
+            <a href="#" class="text-[#f2e6c4] text-xl font-bold no-underline">AstroLos</a>
+            <span class="text-[#ced1c9] text-sm">11/11</span>
+        </div>
+        <div class="w-full h-1.5 bg-[#1e293b] rounded-full overflow-hidden mt-5">
+            <div class="h-full bg-[#10b981] rounded-full w-full transition-all duration-300"></div>
+        </div>
+    </nav>
+
+    <div class="text-center mb-5 mt-1 px-4 w-full">
+        <p class="text-2xl font-semibold text-[#f2e6c4] leading-tight">
+            Take a picture of the <strong class="text-[#faf6e8]">palm</strong> of your <strong class="text-[#faf6e8]">left hand</strong>
+        </p>
+    </div>
+
+    <div class="flex items-center justify-center w-full">
+        <img src="images/reading.gif" class="opacity-30 rounded-3xl w-[60%] max-w-[350px]" alt="Mão">
+    </div>
+
+    <div class="w-full h-[5px] relative bottom-1 bg-[#1e3b48]"></div>
+
+    <div class="w-full px-6 mt-4">
+        <p class="text-sm text-[#ffffffb3] text-center sans">
+            Privacy na priority for us. We only process non-identifiable data to make sure say anonymity dey.
+        </p>
+    </div>
+
+    <div class="mt-6 flex flex-col items-center">
+        <div class="flex items-center justify-center">
+            <p id="inicial" class="px-2 py-1 text-xs bg-[#2d5668] text-white rounded-full shadow-xl mr-1 border border-[#000]"></p>
+            <p id="email" class="text-center sans text-[#14d5c2] font-light text-xs"></p>
+        </div>
+        <p class="text-xs text-center sans text-[#fff9] mt-1">I just receive predictions</p>
+    </div>
+
+    <div class="w-full flex justify-center items-center mt-6">
+        <a href="photo.html" onclick="redirecionar()" class="bg-[#17cfbc] text-white text-lg rounded-full py-3 px-12 font-bold w-[90%] max-w-[400px] text-center transition-all duration-300 no-underline hover:bg-[#00847C] hover:text-white active:scale-98">
+            Take Picture
+        </a>
+    </div>
+
+    <div class="flex items-center justify-center mt-4">
+        <a href="upload.html" onclick="redirecionarSecondary()" class="text-center text-[#14d5c2] text-base font-semibold sans">
+            Send picture of the palm of your hand
+        </a>
+    </div>
+
+    <script>
+        const emails = [
+            "emeka****@gmail.com", "olamide*****@outlook.com", "chidi****@yahoo.com", "ayodele*****@hotmail.com", "bukola****@live.com",
+            "adeola****@gmail.com", "obi*****@outlook.com", "chika****@yahoo.com", "ikechukwu*****@hotmail.com", "ngozi****@live.com",
+            "tolulope****@gmail.com", "tunde*****@outlook.com", "micheal****@yahoo.com", "chisom*****@hotmail.com", "nkechi****@live.com",
+            "taiwo****@gmail.com", "oyinda*****@outlook.com", "obioma****@yahoo.com", "patience*****@hotmail.com", "damilola****@live.com",
+            "uche****@gmail.com", "ike*****@outlook.com", "nana****@yahoo.com", "sani*****@hotmail.com", "chinonso****@live.com",
+            "chinedu****@gmail.com", "kemi*****@outlook.com", "funmi****@yahoo.com", "jide*****@hotmail.com", "toluwanimi****@live.com",
+            "victor****@gmail.com", "munirat*****@outlook.com", "ajibola****@yahoo.com", "durojaiye*****@hotmail.com", "sola****@live.com",
+            "olu****@gmail.com", "tobi*****@outlook.com", "ayotunde****@yahoo.com", "micheline*****@hotmail.com", "adebayo****@live.com",
+            "chinwe****@gmail.com", "kate*****@outlook.com", "oluwaseun****@yahoo.com", "bimbo*****@hotmail.com", "nnamdi****@live.com",
+            "adedeji****@gmail.com", "funke*****@outlook.com", "dare****@yahoo.com", "amaka*****@hotmail.com", "obinna****@live.com",
+            "racheal****@gmail.com", "olawale*****@outlook.com", "funmi****@yahoo.com", "tope*****@hotmail.com", "oyinlola****@live.com",
+            "temilade****@gmail.com", "goke*****@outlook.com", "peju****@yahoo.com", "seun*****@hotmail.com", "sonia****@live.com",
+            "paul****@gmail.com", "chinyere*****@outlook.com", "adewale****@yahoo.com", "oluwafemi*****@hotmail.com", "banke****@live.com",
+            "felix****@gmail.com", "shola*****@outlook.com", "adeola****@yahoo.com", "titi*****@hotmail.com", "ajoke****@live.com"
+        ]; // Gerado por IA, pode aumentar a quantidade de emails se achar necessario ^
+
+        const emailElement = document.getElementById("email");
+        const inicialElement = document.getElementById("inicial");
+
+        function getRandomEmail() {
+            return emails[Math.floor(Math.random() * emails.length)];
+        }
+
+        function updateEmail() {
+            emailElement.style.opacity = 0;
+            inicialElement.style.opacity = 0;
+
+            setTimeout(() => {
+                const email = getRandomEmail();
+                emailElement.textContent = email;
+                inicialElement.textContent = email.charAt(0).toUpperCase();
+                emailElement.style.opacity = 1;
+                inicialElement.style.opacity = 1;
+            }, 500);
+        }
+
+        emailElement.style.transition = "opacity 0.5s ease-in-out";
+        inicialElement.style.transition = "opacity 0.5s ease-in-out";
+        updateEmail();
+        setInterval(updateEmail, 3000);
+    </script><script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1428847678312337');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1428847678312337&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+     <script>
+  function redirecionar() {
+    window.location.href = 'photo.html' + window.location.search;
+  }
+  
+  function redirecionarSecondary() {
+    window.location.href = 'upload.html' + window.location.search;
+  }
+</script>
+</body>
+</html>

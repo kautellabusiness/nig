@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroLos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>* {
+            font-family: "Philosopher", serif;
+        }
+        .sans {
+          font-family: "Open Sans", serif;
+        }
+    </style>
+</head>
+<body class="bg-[#1e3b48] flex flex-col items-center min-h-screen">
+  <nav class="nav-second w-full max-w-[500px] px-5 box-border mt-2 flex flex-col items-center">
+    <div class="principal flex justify-between items-center w-full">
+        <button class="back-button bg-transparent border-none p-0 cursor-pointer">
+            <a href="elements.html" class="back-button-link">
+                <div class="arrow w-6 text-[#f2e6c4] hover:text-[#94855b]">
+                    <svg width="21" height="13" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M19.945 5.452H3.61l3.7-3.66A1.044 1.044 0 0 0 7.313.308 1.06 1.06 0 0 0 5.82.305L.311 5.757a1.045 1.045 0 0 0-.002 1.485l5.512 5.453a1.06 1.06 0 0 0 1.492-.004c.41-.41.409-1.074-.004-1.482l-3.7-3.66h16.336c.583 0 1.055-.47 1.055-1.049s-.472-1.048-1.055-1.048z"></path>
+                    </svg>
+                </div>
+            </a>
+        </button>
+        <a href="#" class="logo-text text-[#f2e6c4] text-[1.375rem] font-bold no-underline">AstroLos</a>
+        <span class="page-counter text-[#ced1c9] text-sm">10/11</span>
+    </div>
+    <div class="progress-bar w-full h-1.5 bg-[#1e293b] rounded-full overflow-hidden mt-5">
+        <div class="progress-bar-fill w-[91%] h-full bg-[#10b981] rounded-full transition-all duration-300"></div>
+    </div>
+</nav>
+        <div class="flex flex-col items-center mt-6">
+            <h1 class="leading-[30px] w-[90%] text-[1.625rem] font-semibold text-[#f2e6c4] text-center">Which of the following colors you prefer?</h1>
+            <h2 class="text-[#faf7eacc] px-6 mt-2 text-center sans">Color na important for better personalization</h2>
+        </div>
+        <div class="flex flex-col items-center justify-center mt-8">
+          <div class="flex w-[340px] rounded-[12px] mb-2 shadow-xl bg-[#2d5668] px-[18px] py-[15px]" onclick="redirecionar()">
+            <div class="w-[34px] h-[34px] bg-[#ff4639] rounded-full mr-3"></div>
+            <p class="text-[#faf6e8] mt-1 font-semibold">Red</p>
+          </div>
+
+          <div class="flex w-[340px] rounded-[12px] mb-2 shadow-xl bg-[#2d5668] px-[18px] py-[15px]" onclick="redirecionar()">
+            <div class="w-[34px] h-[34px] bg-[#f2d367] rounded-full mr-3"></div>
+            <p class="text-[#faf6e8] mt-1 font-semibold">Yellow</p>
+          </div>
+
+          <div class="flex w-[340px] rounded-[12px] mb-2 shadow-xl bg-[#2d5668] px-[18px] py-[15px]" onclick="redirecionar()">
+            <div class="w-[34px] h-[34px] bg-[#0095ff] rounded-full mr-3"></div>
+            <p class="text-[#faf6e8] mt-1 font-semibold">Blue</p>
+          </div>
+
+          <div class="flex w-[340px] rounded-[12px] mb-2 shadow-xl bg-[#2d5668] px-[18px] py-[15px]" onclick="redirecionar()">
+            <div class="w-[34px] h-[34px] bg-[#f2aa67] rounded-full mr-3"></div>
+            <p class="text-[#faf6e8] mt-1 font-semibold">Orange</p>
+          </div>
+
+          <div class="flex w-[340px] rounded-[12px] mb-2 shadow-xl bg-[#2d5668] px-[18px] py-[15px]" onclick="redirecionar()">
+            <div class="w-[34px] h-[34px] bg-[#00d7bc] rounded-full mr-3"></div>
+            <p class="text-[#faf6e8] mt-1 font-semibold">Green</p>
+          </div>
+
+          <div class="flex w-[340px] rounded-[12px] mb-2 shadow-xl bg-[#2d5668] px-[18px] py-[15px]" onclick="redirecionar()">
+            <div class="w-[34px] h-[34px] bg-[#aa82ff] rounded-full mr-3"></div>
+            <p class="text-[#faf6e8] mt-1 font-semibold">Violet</p>
+          </div>
+        </div><script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1428847678312337');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1428847678312337&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+     <script>
+  function redirecionar() {
+    window.location = '/photo-guide.html'
+    window.location.href = 'photo-guide.html' + window.location.search;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroLos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+  <style>* { font-family: 'Philosopher', sans-serif; }
+    .date-option { font-family: "Open Sans", serif; font-size: 1.4rem;}
+    .header-option { font-family: "Open Sans", serif; font-size: 1.4rem;}
+    .texto-aniversario { font-family: "Open Sans", serif; }
+  </style>
+</head>
+<body class="bg-[#1e3b48] flex flex-col items-center min-h-screen">
+  <nav class="nav-second w-full max-w-[500px] px-5 box-border mt-2 flex flex-col items-center">
+    <div class="principal flex justify-between items-center w-full">
+      <button class="back-button bg-transparent border-none p-0 cursor-pointer">
+        <a href="index.html" class="back-button-link">
+          <div class="arrow w-6 text-[#f2e6c4] hover:text-[#94855b]">
+            <svg width="21" height="13" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path d="M19.945 5.452H3.61l3.7-3.66A1.044 1.044 0 0 0 7.313.308 1.06 1.06 0 0 0 5.82.305L.311 5.757a1.045 1.045 0 0 0-.002 1.485l5.512 5.453a1.06 1.06 0 0 0 1.492-.004c.41-.41.409-1.074-.004-1.482l-3.7-3.66h16.336c.583 0 1.055-.47 1.055-1.049s-.472-1.048-1.055-1.048z"></path>
+            </svg>
+          </div>
+        </a>
+      </button>
+      <a href="#" class="logo-text text-[#f2e6c4] text-[1.375rem] font-bold no-underline">AstroLos</a>
+      <span class="page-counter text-[#ced1c9] text-sm">2/11</span>
+    </div>
+    <div class="progress-bar w-full h-1.5 bg-[#1e293b] rounded-full overflow-hidden mt-5">
+      <div class="progress-bar-fill w-[18%] h-full bg-[#10b981] rounded-full transition-all duration-300"></div>
+    </div>
+  </nav>
+  <div class="conteudo flex flex-col items-center mt-8 w-[365px]">
+    <h2 class="titulo-anivesario text-[#f2e6c4] text-[1.625rem] text-center font-semibold w-[80%] leading-[28px]">When be your birthday?</h2>
+    <h3 class="texto-aniversario text-[#ced1c9] text-[1rem] w-[83%] text-center mt-2 mb-5">E important to sabi your birth date before you fit do complete and accurate predictions</h3>
+  </div>
+  <div class="datas mt-12 ">
+    <div class="date-container w-[365px] text-[#536b7a] font-sans h-[700px]">
+      <div class="date-columns grid grid-cols-3 h-[36vh]">
+        <img src="lineBorder.svg" alt="" class="absolute w-[100vw] left-0 lg:h-[1px] top-[345px] opacity-50">
+        <img src="lineBorder.svg" alt="" class="absolute w-[100vw]  left-0 lg:h-[1px] top-[385px] opacity-50">
+        <div class="date-column relative">
+          <div class="scroll-window h-[120px] overflow-hidden relative">
+            <div class="scroll-content month absolute w-full transition-transform duration-300">
+              <div class="header-option text-center h-10 leading-10 sans">Month</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">January</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">February</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">March</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">April</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">May</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">June</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">July</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">August</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">September</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">October</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">November</div>
+              <div class="date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200 text-[1.4rem] sans">December</div>
+            </div>
+          </div>
+        </div>
+        <div class="date-column relative">
+          <div class="scroll-window h-[120px] overflow-hidden relative">
+            <div class="scroll-content day absolute w-full transition-transform duration-300">
+              <div class="header-option text-center h-10 leading-10 sans">Day</div>
+            </div>
+          </div>
+        </div>
+        <div class="date-column relative">
+          <div class="scroll-window h-[120px] overflow-hidden relative">
+            <div class="scroll-content year absolute w-full transition-transform duration-300">
+              <div class="header-option text-center h-10 leading-10 sans">Year</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button-area w-full flex justify-center items-center mt-2">
+        <a id="continueButton" href="time.html" onclick="redirecionar()" class="continue-button bg-[#17cfbc] text-white text-[1.5rem] border-none rounded-full py-2 px-12 font-bold w-[316px] cursor-pointer w-1/2 max-w-[400px] text-center transition-all duration-300 no-underline inline-block hover:bg-[#00847C] hover:text-white active:scale-98 disabled:opacity-50 pointer-events-none">
+          Continue
+        </a>
+      </div>
+    </div>
+  </div><script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const monthData = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const daysInMonth = { January: 31, February: 28, March: 31, April: 30, May: 31, June: 30, July: 31, August: 31, September: 30, October: 31, November: 30, December: 31 };
+      let selected = { month: null, day: null, year: null };
+      const title = document.querySelector('.titulo-anivesario');
+      const continueButton = document.getElementById('continueButton');
+      continueButton.style.opacity = '0.5';
+  
+      const updateTitle = () => {
+        if (selected.month && selected.day && selected.year) {
+          title.textContent = `When be your birthday?`;
+          continueButton.classList.remove('pointer-events-none');
+          continueButton.style.opacity = '1';
+        } else {
+          continueButton.classList.add('pointer-events-none');
+          continueButton.style.opacity = '0.5';
+        }
+      };
+  
+      const setupScroll = (content) => {
+        let isDragging = false;
+        let startY = 0;
+        let scrollTop = 0;
+  
+        const hammer = new Hammer(content);
+        hammer.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
+  
+        hammer.on('panstart', (e) => {
+          isDragging = true;
+          startY = e.center.y;
+          scrollTop = parseInt(content.style.transform.replace('translateY(', '').replace('px)', '')) || 0;
+        });
+  
+        hammer.on('panmove', (e) => {
+          if (!isDragging) return;
+          const deltaY = e.center.y - startY;
+          content.style.transform = `translateY(${scrollTop + deltaY}px)`;
+        });
+  
+        hammer.on('panend', () => {
+          isDragging = false;
+          const options = content.querySelectorAll('.date-option');
+          const optionHeight = options[0].offsetHeight;
+          const currentScroll = parseInt(content.style.transform.replace('translateY(', '').replace('px)', '')) || 0;
+          const closestIndex = Math.round(Math.abs(currentScroll) / optionHeight);
+          const newScroll = closestIndex * optionHeight;
+          content.style.transform = `translateY(-${newScroll}px)`;
+  
+          const selectedOption = options[closestIndex];
+          if (selectedOption) {
+            options.forEach(opt => opt.classList.remove('selected', 'text-white'));
+            selectedOption.classList.add('selected', 'text-white');
+            if (content.classList.contains('month')) {
+              selected.month = selectedOption.textContent;
+              updateDayOptions();
+            } else if (content.classList.contains('day')) {
+              selected.day = selectedOption.textContent;
+            } else if (content.classList.contains('year')) {
+              selected.year = selectedOption.textContent;
+            }
+            updateTitle();
+          }
+        });
+      };
+  
+      document.querySelectorAll('.scroll-content').forEach(content => {
+        setupScroll(content);
+        content.addEventListener('click', e => {
+          if (!e.target.classList.contains('date-option')) return;
+          const option = e.target;
+          const offset = option.offsetTop - 40;
+          content.style.transform = `translateY(-${offset}px)`;
+          content.querySelectorAll('.date-option').forEach(opt => opt.classList.remove('selected', 'text-white'));
+          option.classList.add('selected', 'text-white');
+          if (content.classList.contains('month')) {
+            selected.month = option.textContent;
+            updateDayOptions();
+          } else if (content.classList.contains('day')) {
+            selected.day = option.textContent;
+          } else if (content.classList.contains('year')) {
+            selected.year = option.textContent;
+          }
+          updateTitle();
+        });
+      });
+  
+      const dayContent = document.querySelector('.scroll-content.day');
+      const updateDayOptions = () => {
+        const header = dayContent.querySelector('.header-option');
+        dayContent.innerHTML = '';
+        dayContent.appendChild(header);
+        const maxDays = selected.month ? daysInMonth[selected.month] : 31;
+        let frag = document.createDocumentFragment();
+        for (let i = 1; i <= maxDays; i++) {
+          const div = document.createElement('div');
+          div.className = 'date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200';
+          div.textContent = i.toString().padStart(2, '0');
+          frag.appendChild(div);
+        }
+        dayContent.appendChild(frag);
+      };
+  
+      const yearContent = document.querySelector('.scroll-content.year');
+      const headerYear = document.createElement('div');
+      headerYear.className = 'header-option text-center h-10 leading-10';
+      headerYear.textContent = 'Year';
+      yearContent.innerHTML = '';
+      yearContent.appendChild(headerYear);
+      let fragYear = document.createDocumentFragment();
+      for (let i = 2007; i >= 1900; i--) {
+        const div = document.createElement('div');
+        div.className = 'date-option text-center h-10 leading-10 cursor-pointer transition-colors duration-200';
+        div.textContent = i;
+        fragYear.appendChild(div);
+      }
+      yearContent.appendChild(fragYear);
+      updateDayOptions();
+  
+      const getSigno = (mes, dia) => {
+        const date = new Date(2000, mes - 1, dia); 
+        const diaDoAno = Math.floor((date - new Date(2000, 0, 0)) / 86400000);
+  
+        const signos = [
+          { nome: "aquario", inicio: 20, fim: 49 },    
+          { nome: "peixes", inicio: 50, fim: 79 },     
+          { nome: "aries", inicio: 80, fim: 109 },       
+          { nome: "touro", inicio: 110, fim: 140 },     
+          { nome: "gemeos", inicio: 141, fim: 171 },     
+          { nome: "cancer", inicio: 172, fim: 203 },    
+          { nome: "leao", inicio: 204, fim: 234 },       
+          { nome: "virgem", inicio: 235, fim: 265 },   
+          { nome: "libra", inicio: 266, fim: 295 },    
+          { nome: "escorpiao", inicio: 296, fim: 325 }, 
+          { nome: "sagitario", inicio: 326, fim: 355 }, 
+          { nome: "capricornio", inicio: 356, fim: 19 } 
+        ];
+  
+        return signos.find(signo => {
+          if (signo.inicio > signo.fim) {
+            return diaDoAno >= signo.inicio || diaDoAno <= signo.fim;
+          } else {
+            return diaDoAno >= signo.inicio && diaDoAno <= signo.fim;
+          }
+        })?.nome || "capricornio";
+      };
+  
+      continueButton.addEventListener('click', (e) => {
+        if (!selected.month || !selected.day) {
+          e.preventDefault();
+          return;
+        }
+        const mesIndex = monthData.indexOf(selected.month) + 1;
+        const signo = getSigno(mesIndex, parseInt(selected.day));
+        localStorage.setItem('sign', signo.toLowerCase().replace(/ç/g, 'c').replace(/ã/g, 'a'));
+      });
+    });
+  </script>
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1428847678312337');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1428847678312337&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+     <script>
+  function redirecionar() {
+    window.location.href = 'time.html' + window.location.search;
+  }
+</script>
+</body>
+</html>

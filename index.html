@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroLos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>* {
+            font-family: 'Philosopher', sans-serif;
+        }
+        .sans {font-family: "Open Sans", serif;}
+    </style>
+</head>
+<body class="bg-[#1e3b48] flex flex-col items-center min-h-screen">
+    <div class="nav flex justify-center items-center mt-8 mb-6">
+        <div class="logo">
+            <img class="logo-image w-12 mr-4" src="logo2.png" alt="">
+        </div>
+        <div class="nomeLogo">
+            <h1 class="text-[#f2e6c4] text-[1.625rem] font-semibold">AstroLos</h1>
+        </div>
+    </div>
+
+    <div class="relatorio flex flex-col justify-center items-center px-5">
+        <h1 class="titulo-relatorio text-[#f2e6c4] text-2xl text-center font-semibold mb-4 leading-[1]">
+            Personalized astrological report with powerful predictions
+        </h1>
+        <h3 class="descricao-pagina text-[#ced1c9] text-sm px-8 text-center sans mb-2">
+            Answer one minute test to receive personalized prediction.
+        </h3>
+        <h3 class="texto-escolha-genero text-[#ced1c9] text-[1rem] text-center mt-4 sans">
+            Select your gender to start
+        </h3>
+    </div>
+
+    <div class="card-generos flex justify-center items-center px-3 mt-6">
+        <a href="birth.html" onclick="redirecionar()" class="link-genero">
+            <div class="feminino bg-[#2d5668] px-1 w-[100px] flex flex-col justify-center items-center rounded-lg cursor-pointer transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg mx-2 py-[15px]">
+                <img class="imagem-genero mb-3 w-[44px]" src="images/female.webp" alt="">
+                <h3 class="texto-genero text-white text-[1rem] mt-2">Female</h3>
+            </div>
+        </a>
+        <a href="birth.html" onclick="redirecionar()" class="link-genero">
+            <div class="masculino bg-[#2d5668] px-1 w-[100px] flex flex-col justify-center items-center rounded-lg cursor-pointer transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg mx-2 py-[15px]">
+                <img class="imagem-genero mb-3 w-[44px]" src="images/male.webp" alt="">
+                <h3 class="texto-genero text-white text-[1rem] mt-2">Male</h3>
+            </div>
+        </a>
+        <a href="birth.html" onclick="redirecionar()" class="link-genero">
+            <div class="naoBinario bg-[#2d5668] px-1 w-[100px] flex flex-col justify-center items-center rounded-lg cursor-pointer transition-transform duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg mx-2 py-[15px]">
+                <img class="imagem-genero mb-3 w-[44px]" src="images/binary.webp" alt="">
+                <h3 class="texto-genero text-white text-[1rem] mt-2">Non-Binary</h3>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.link-genero');
+    
+        cards.forEach(card => {
+            const innerDiv = card.querySelector('div'); 
+    
+            card.style.cursor = 'default';
+    
+            innerDiv.addEventListener('mouseover', () => {
+                card.style.cursor = 'pointer';
+            });
+    
+            innerDiv.addEventListener('mouseout', () => {
+                card.style.cursor = 'default';
+            });
+        });
+    </script>
+    <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1428847678312337');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1428847678312337&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+     <script>
+  function redirecionar() {
+    window.location.href = 'birth.html' + window.location.search;
+  }
+</script>
+</body>
+</html>
