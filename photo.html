@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+    <title>Astroquiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <style>h1, h2, h3, .titulo-anivesario {
+  font-family: "Philosopher", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+p, a {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: normal !important;
+}
+
+    body {
+        margin: 0;
+        background-color: #1e3b48;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        color: #ced1c9;
+    }
+
+    .nav-second {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+        max-width: 500px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .back-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .arrow {
+        width: 30px;
+        color: #f2e6c4;
+      }
+
+      .arrow:hover {
+        color: #94855b;
+      }
+
+    .back-button img {
+        width: 24px;
+        height: auto;
+    }
+
+    .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: #e9d4a3;
+        text-decoration: none;
+    }
+
+    .page-counter {
+        font-size: 14px;
+        color: #ced1c9;
+    }
+
+    .principal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-second{
+        flex-direction: column;
+        width: 90vw;
+        max-width: 500px;
+    }
+
+     .progress-bar {
+        margin-top: 15px;
+        width: 100%;
+        height: 5px;
+        background-color: #1e293b;
+        border-radius: 9999px;
+        overflow: hidden;
+      }
+
+      .progress-bar-fill {
+        width: 100%;
+        height: 100%;
+        background-color: #10b981;
+        border-radius: 9999px;
+        transition: width 0.3s ease-in-out;
+      }
+
+      .conteudo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .titulo-destino{
+        margin-top: 20px;
+        color: #e9d4a3;
+        text-align: center;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .texto-aniversario {
+        text-align: center;
+        font-size: 18px;
+      }
+
+    .camera-container {
+         display: flex;
+        justify-content: center;
+        align-items: center;
+         margin-top: 15px;
+        position: relative;
+        width: 90vw;
+        max-width: 1000px;
+        height: 150vw;
+          max-height: 500px;
+       }
+     .camera-container.active{
+         height: auto;
+       }
+        #cameraPreview {
+           position: relative;
+        width: 90%;
+        height: 90%;
+           display: flex;
+          align-items: center;
+          justify-content: center;
+           overflow: hidden;
+           border-radius: 10px;
+       }
+       #handOverlay {
+           position: absolute;
+            top: 0;
+           width: 100%;
+            height: 90%;
+           object-fit:cover;
+           pointer-events: none;
+        }
+
+    .analysis-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scanning-line {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #34eb71;
+        border-radius: 2px;
+        animation: scanAnimation 2s linear infinite alternate;
+    }
+
+    @keyframes scanAnimation {
+        0% {
+            top: 20px;
+        }
+        100% {
+            top: calc(100% - 20px - 4px);
+        }
+    }
+
+    .analysis-progress-container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        display: none;
+    }
+
+    .analysis-progress-header {
+
+   
+  font-family: "Philosopher", serif;
+  font-weight: 600;
+  font-style: bold;
+
+
+        font-size: 22px;
+        color: #f3f4f6;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .analysis-progress-bar {
+        width: 100%;
+        height: 8px;
+        background-color: #374151;
+        border-radius: 6px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .analysis-progress-bar-fill {
+        width: 0%;
+        height: 100%;
+        background-color: #e9d4a3;
+        border-radius: 6px;
+        transition: none;
+        position: absolute;
+        left: 0;
+    }
+
+    .progress-percentage {
+         display: none;
+    }
+
+
+    .analysis-text {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #f3f4f6;
+        text-align: center;
+    }
+
+
+      .button-area {
+         display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+           margin-top: 20px;
+           flex-direction: column;
+           }
+      .continue-button {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            background-color: #17cfbc;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+         }
+          .continue-button:hover {
+            background-color: #00847C;
+            color: rgba(255, 255, 255, 1);
+          }
+          .continue-button:active {
+            transform: scale(0.98);
+          }
+    .continue-button2 {
+        background-color: #17cfbc;
+        color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 25px;
+        padding: 8px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        width: auto;
+        min-width: 200px;
+        max-width: 400px;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
+    .continue-button2:hover {
+        background-color: #00847C;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .continue-button2:active {
+        transform: scale(0.98);
+    }
+@media (max-width: 600px) {
+.nav-second, .principal, .camera-container, .conteudo, .button-area {
+width: 95vw;
+}
+.titulo-destino{
+    font-size: 1.5rem;
+}
+.texto-aniversario {
+    font-size: 1rem;
+}
+.logo-text {
+    font-size: 1.6rem;
+}
+.page-counter {
+    font-size: 0.9rem;
+}
+}
+    </style>
+</head>
+<body>
+    <nav class="nav-second">
+
+        <div class="principal">
+            <button class="back-button">
+                <a href="photo-guide.html" class="back-button-link">
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </div>
+                </a>
+        </button>
+
+        </div>
+
+               <div class="camera-container" id="cameraContainer">
+               <div id="cameraPreview" >
+                 <img id="handOverlay" src="https://sub.astroline.today/static/media/shape.8e5e1cffb28474ee3111.webp" alt="Hand Overlay" >
+                 </div>
+
+                 <div id="analysisOverlay" class="analysis-overlay">
+                    <div id="scanningLine" class="scanning-line"></div>
+                </div>
+            </div>
+            <div class="analysis-progress-container" id="analysisProgressContainer">
+                 <div class="analysis-progress-header">Digitalizando</div>
+                <div class="analysis-progress-bar">
+                    <div class="analysis-progress-bar-fill" id="analysisProgressBarFill"></div>
+                     <span class="progress-percentage" id="progressPercentageText"></span>
+                </div>
+
+            </div>
+
+                <div class="button-area">
+                <a href="#" id="startCameraButton" class="continue-button"></a>
+                <a href="#" id="takePhotoButton" class="continue-button" style="display: none;"></a>
+                 </div>
+                 
+              <div class="conteudo">
+                <h2 class="titulo-destino">Tire uma foto da palma de sua mão
+                    <br>
+                  esquerda
+                </h2>
+                
+              </div>
+    </nav>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const startCameraButton = document.getElementById('startCameraButton');
+      const takePhotoButton = document.getElementById('takePhotoButton');
+      const cameraPreview = document.getElementById('cameraPreview');
+      const cameraContainer = document.getElementById('cameraContainer');
+      const analysisOverlay = document.getElementById('analysisOverlay');
+      const analysisProgressContainer = document.getElementById('analysisProgressContainer');
+      let videoElement = null;
+      let cameraStream = null;
+
+      startCameraButton.addEventListener('click', function(event) {
+          event.preventDefault();
+           if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                  let constraints = {
+                       video: {
+                               facingMode: { exact: 'environment' },
+                               width: { ideal: 640 },
+                               height: { ideal: 480 },
+                          },
+                     };
+
+              navigator.mediaDevices.getUserMedia(constraints)
+                  .then(function(stream) {
+                      startCameraStream(stream);
+                  })
+                  .catch(function(error) {
+                      console.error('Error accessing rear camera:', error);
+                      let frontConstraints = {
+                          video: {
+                              facingMode: 'user', 
+                              width: { ideal: 640 },
+                              height: { ideal: 480 },
+                          },
+                      };
+                      navigator.mediaDevices.getUserMedia(frontConstraints)
+                          .then(function(stream) {
+                              startCameraStream(stream);
+                          })
+                          .catch(function(error) {
+                              console.error('Error accessing front camera:', error);
+                              alert('Failed to access camera.');
+                              window.location.href = 'checkout.html' + window.location.search;
+                          });
+                  });
+
+
+                 function startCameraStream(stream) {
+                      cameraStream = stream;
+                      cameraContainer.classList.add('active');
+                       videoElement = document.createElement('video');
+                        videoElement.srcObject = stream;
+                            videoElement.setAttribute('playsinline', true);
+                            videoElement.muted = true;
+                        videoElement.load();
+                        videoElement.play();
+                        videoElement.style.width = '100%';
+                        videoElement.style.height = '100%';
+                          cameraPreview.appendChild(videoElement);
+
+                          startCameraButton.style.display = 'none';
+                          takePhotoButton.style.display = 'inline-block';
+                          takePhotoButton.textContent = '';
+                 }
+
+
+           } else {
+                alert('getUserMedia não é suportado.');
+                window.location.href = 'checkout.html' + window.location.search;
+             }
+      });
+
+      takePhotoButton.addEventListener('click', function(event) {
+          event.preventDefault();
+          if (videoElement && cameraStream) {
+              const canvas = document.createElement('canvas');
+              canvas.width = videoElement.videoWidth;
+              canvas.height = videoElement.videoHeight;
+                  const ctx = canvas.getContext('2d');
+                   ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+                  const imageDataURL = canvas.toDataURL('image/png');
+          localStorage.setItem('selectedImage', imageDataURL);
+
+           cameraStream.getTracks().forEach(track => track.stop());
+             cameraPreview.removeChild(videoElement);
+             videoElement = null;
+             cameraStream = null;
+             cameraPreview.style.display = 'none';
+
+             const capturedImgElement = document.createElement('img');
+             capturedImgElement.src = imageDataURL;
+             capturedImgElement.style.maxWidth = '100%';
+             capturedImgElement.style.height = 'auto';
+             cameraContainer.appendChild(capturedImgElement);
+
+             takePhotoButton.style.display = 'none';
+             startCameraButton.style.display = 'none';
+             takePhotoButton.textContent = 'Tirar Foto';
+
+             analysisOverlay.style.display = 'flex';
+             analysisProgressContainer.style.display = 'flex';
+
+             const progressBarFill = document.getElementById('analysisProgressBarFill');
+             const progressPercentageText = document.getElementById('progressPercentageText');
+             let progress = 0;
+             const intervalTime = 30;
+             const totalTime = 7000; 
+             const increment = (100 * intervalTime) / totalTime;
+             let cycleCount = 0;
+             const maxCycles = 3;
+            let currentPosition = 0;
+            const barWidth = 20;
+
+             const progressInterval = setInterval(function() {
+                currentPosition += increment;
+
+                if(currentPosition > 100){
+                    currentPosition = 0;
+                    cycleCount++;
+                }
+
+                progressBarFill.style.width = `${barWidth}%`;
+                 progressBarFill.style.left = `${currentPosition}%`
+
+               progressPercentageText.textContent = ``;
+
+
+                 if(cycleCount >= maxCycles) {
+                    clearInterval(progressInterval);
+                     setTimeout(function() {
+                        cameraContainer.removeChild(capturedImgElement);
+                        analysisOverlay.style.display = 'none';
+                        analysisProgressContainer.style.display = 'none';
+                        cameraPreview.style.display = 'flex';
+                        window.location.href = 'checkout.html' + window.location.search;
+                     }, 0);
+                 }
+             }, intervalTime);
+
+             setTimeout(function() {
+                    if(analysisProgressContainer.style.display !== 'none') {
+                         clearInterval(progressInterval);
+                        cameraContainer.removeChild(capturedImgElement);
+                        analysisOverlay.style.display = 'none';
+                        analysisProgressContainer.style.display = 'none';
+                        cameraPreview.style.display = 'flex';
+                        window.location.href = 'checkout.html' + window.location.search;
+                    }
+             }, totalTime);
+          }
+      });
+   });
+</script><script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '964588739159245');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=964588739159245&amp;ev=PageView&amp;noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <script>
+  window.pixelId = "68543d546f8512196612741b";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+</body>
+</html>
